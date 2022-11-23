@@ -1,0 +1,72 @@
+@import "../../../../styles/variables.scss";
+
+.container {
+  @include flex(center, flex-end, row);
+
+  width: 100%;
+  height: 100%;
+
+  animation: advertise-appearance 1s ease-in-out forwards;
+}
+
+.content {
+  @include flex(auto, space-between, column);
+  width: 90%;
+  height: 80%;
+
+  object-fit: cover;
+}
+
+.title{
+  font-weight: bold;
+  font-size: 1.2em;
+
+}
+
+.name {
+  font-size: 100px;
+  font-weight: bold;
+}
+
+.video {
+  width: 80%;
+  height: 50%;
+}
+
+@keyframes advertise-appearance {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@include responsive__width($lg) {
+  .container {
+    @include flex(center, center, row);
+
+    font-size: 2em;
+  }
+
+  .name{
+    font-size: 4.5em;
+
+  }
+
+  .video {
+    display: none;
+  }
+}
+
+@include responsive__width($sm){
+  .title{
+    font-size: 2em;
+
+  }
+
+  .name{ 
+    font-size: 7em;
+  }
+}

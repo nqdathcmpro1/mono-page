@@ -1,0 +1,57 @@
+@import "../../../styles/variables.scss";
+
+@include responsive__container($white);
+
+.container {
+  @include flex(center, center, column);
+}
+
+@include title();
+
+.content {
+  width: 80%;
+  height: 80%;
+
+  @include flex(center, center, row);
+}
+
+.description {
+  @include flex(center, space-between, row);
+  width: 70%;
+  height: fit-content;
+
+  padding-left: 50px;
+
+  border: 10px solid $yellow;
+  border-style: none none none solid;
+
+  overflow: hidden;
+}
+
+.image {
+  @include image__size(12%, 100%);
+
+  @include flex(center, center, row);
+}
+
+@include responsive__width($lg) {
+  .content {
+    @include flex(center, center, column);
+  }
+
+  .image {
+    @include image__size(auto, 50%);
+  }
+
+  .description {
+    width: 100%;
+
+    font-size: 4em;
+  }
+}
+
+@include responsive__width($sm){
+  .description{
+    font-size: 5em;
+  }
+}

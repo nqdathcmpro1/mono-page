@@ -1,0 +1,62 @@
+@import "../../../styles/variables.scss";
+
+@include responsive__container($dark);
+
+.container{
+    @include flex(center, center, column);
+}
+
+@include title();
+
+.title{
+    color: $white;
+}
+
+.content{ 
+    width: 80%;
+    height: 70%;
+
+    overflow-x: auto;
+}
+
+.schedule__container{
+    width: 100%;
+    height: 100px;
+
+    margin-bottom: 20px;
+
+    @include flex(center, center, column);
+
+    border-radius: 20px;
+
+    background-color: $light-wheat;
+}
+
+.schedule__name{
+    font-size: 3em;
+    font-weight: bold;
+}
+
+.schedule__date, .schedule__ticket__number{
+    font-size: 1.5em;
+}
+
+@include responsive__width($lg){
+    .schedule__name{
+        font-size: 4em;
+    }
+
+    .schedule__date, .schedule__ticket__number{
+        font-size: 2em;
+    }
+}
+
+@include responsive__width($sm){
+    .schedule__name{
+        font-size: 6em;
+    }
+
+    .schedule__date, .schedule__ticket__number{
+        font-size: 3em;
+    }
+}

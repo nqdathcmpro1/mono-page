@@ -1,0 +1,58 @@
+@import "../../../styles/variables.scss";
+
+@include responsive__container($yellow);
+
+.container {
+  @include flex(center, space-evenly, column);
+}
+
+.content {
+  width: 90%;
+  height: 80%;
+
+  @include flex(center, space-evenly, row);
+
+  border-radius: 20px;
+
+  overflow: hidden;
+
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+@include title();
+
+
+.image {
+  @include image__size(30%, 100%);
+  @include flex(flex-end, center, row);
+}
+
+.product {
+  width: 65%;
+  height: 80%;
+
+  border-radius: 10px;
+
+  font-size: 2em;
+}
+
+@include responsive__width($lg) { 
+  .product{
+    font-size: 3em;
+  }
+
+  .image{ 
+    display: none;
+  }
+
+  .product{
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@include responsive__width($sm){
+  .product{
+    font-size: 5em;
+  }
+}

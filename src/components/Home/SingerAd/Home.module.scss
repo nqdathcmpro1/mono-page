@@ -1,0 +1,53 @@
+@import "../../../styles/variables.scss";
+
+@include responsive__container(auto);
+.container {
+  background: rgb(48, 45, 0);
+  background: linear-gradient(
+    141deg,
+    rgba(48, 45, 0, 1) 0%,
+    rgba(235, 210, 72, 1) 49%,
+    rgba(255, 249, 215, 1) 74%
+  );
+
+  @include flex(center, center, column);
+}
+
+.content {
+  @include flex(flex-end, space-between, row);
+
+  width: 80%;
+  height: 80%;
+
+  background-color: transparentize($color: $white, $amount: 0.5);
+
+  border-radius: 20px;
+
+  overflow: hidden;
+}
+.singer__portrait {
+  @include image__size(40%, auto);
+  @include flex(flex-end, center, row);
+}
+
+.singer__advertisement {
+  width: 60%;
+  height: 100%;
+}
+
+@include responsive__width($lg) {
+  .content{
+    width: 90%;
+
+    @include flex(center, space-between, column-reverse)
+  }
+
+  .singer__portrait{
+    @include image__size(100%, 75%);
+  }
+
+  .singer__advertisement{
+    width: 100%;
+    height: 20%;
+  }
+}
