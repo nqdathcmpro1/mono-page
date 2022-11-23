@@ -4,7 +4,7 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import classes from "./ProductTabs.module.scss";
 import TabContent from "./TabContent";
 import videos from "../../../../data/videoData";
-import album from "../../../../data/albumData";
+import albums from "../../../../data/albumData";
 
 const ProductTabs = () => {
   return (
@@ -23,7 +23,7 @@ const ProductTabs = () => {
           <TabContent videos={videos} />
         </TabPanel>
         <TabPanel>
-          <TabContent album={album} />
+          <TabContent albums={albums} />
         </TabPanel>
       </div>
     </Tabs>

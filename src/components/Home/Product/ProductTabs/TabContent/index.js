@@ -3,7 +3,7 @@ import Slider from "react-slick";
 
 import classes from "./TabContent.module.scss";
 
-const TabContent = ({ videos, album }) => {
+const TabContent = ({ videos, albums }) => {
   const settings = {
     className: classes.container,
     dots: true,
@@ -26,24 +26,27 @@ const TabContent = ({ videos, album }) => {
               </div>
 
               <div className={classes.detail}>
-                <span className={classes.name}>{video.name}</span>
-                <span className={classes.singer}>{video.singer}</span>
+                <span className={classes.title}>{video.name}</span>
+                <span className={classes.subtitle}>{video.singer}</span>
               </div>
             </div>
           );
         })}
-      {album && (
-        <div className={classes.slider__item} key={album.id}>
-          <div className={classes.album__img}>
-            <img src={album.albumImg} alt={album.name} />
-          </div>
+      {albums?.length > 0 &&
+        albums.map((album) => {
+          return (
+            <div className={classes.slider__item} key={album.id}>
+              <div className={classes.album__img}>
+                <img src={album.albumImg} alt={album.name} />
+              </div>
 
-          <div className={classes.detail}>
-            <span className={classes.name}>{album.name}</span>
-            <span className={classes.name}>{album.songs}</span>
-          </div>
-        </div>
-      )}
+              <div className={classes.detail}>
+                <span className={classes.title}>{album.name}</span>
+                <span className={classes.subtitle}>{album.songs}</span>
+              </div>
+            </div>
+          );
+        })}
     </Slider>
   );
 };
